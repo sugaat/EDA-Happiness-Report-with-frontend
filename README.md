@@ -2,18 +2,27 @@
 
 Welcome to the Exploratory Data Analysis (EDA) project on the World Happiness Report with a frontend interface. This repository contains code and resources for analyzing and visualizing the happiness data from the World Happiness Report.
 
+This Repo is the frontend version of the repo 
+https://github.com/sugaat/EDA-World-Happiness-Report
+
+
 ## Overview
 
 The World Happiness Report is a landmark survey of the state of global happiness. This project aims to perform Exploratory Data Analysis on the happiness dataset, uncover insights, and create an interactive frontend for users to explore the findings visually.
 
-## Contents
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Data](#data)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+- [Frontend](#frontend)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
 
-- `data/`: This directory contains the raw and processed happiness dataset files.
-- `notebooks/`: Jupyter notebooks for performing EDA on the dataset.
-- `frontend/`: Code and assets for the interactive frontend.
-- `scripts/`: Utility scripts for data preprocessing and analysis.
-- `requirements.txt`: Python dependencies required for running the code.
-- `LICENSE`: The license information for this project.
+## Usuage
+[Run Live App](https://whr2023-eda.streamlit.app/)
+
 
 ## Getting Started
 
@@ -29,7 +38,7 @@ The World Happiness Report is a landmark survey of the state of global happiness
    pip install -r requirements.txt
    ```
 
-3. Explore the notebooks in the `notebooks/` directory for detailed EDA.
+3. Explore the notebook in directory for detailed EDA.
 
 4. Run the frontend:
 
