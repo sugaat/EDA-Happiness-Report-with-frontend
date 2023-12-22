@@ -33,20 +33,12 @@ The World Happiness Report is a landmark survey of the state of global happiness
 
 4. Run the frontend:
 
-   ```bash
-   cd frontend/
-   python app.py
+   ```bash   
+   streamlit run web.py
    ```
 
    Open your browser and navigate to [http://localhost:5000](http://localhost:5000) to interact with the visualizations.
 
-## Notebooks
-
-The `notebooks/` directory contains Jupyter notebooks for different aspects of Exploratory Data Analysis. Feel free to explore these notebooks to understand the analysis process and insights gained from the dataset.
-
-## Frontend
-
-The `frontend/` directory contains code for an interactive web interface built using a web framework (e.g., Flask or Django). The frontend allows users to explore visualizations and key findings from the EDA.
 
 ## Contributions
 
@@ -59,7 +51,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Special thanks to the World Happiness Report for providing the dataset.
-- Contributors to this project.
+- Future Contributors to this project.
 
 Happy exploring! 🌍😊
 ```
