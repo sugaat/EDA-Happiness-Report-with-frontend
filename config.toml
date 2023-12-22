@@ -1,0 +1,7 @@
+[theme]
+base="light"
+
+showWarningOnDirectExecution = false
+
+[client]
+showErrorDetails = false
