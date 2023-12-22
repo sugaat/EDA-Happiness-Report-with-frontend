@@ -222,7 +222,7 @@ order = ["Australia and New Zealand", "Northern Europe", "Western Europe",
 sns.boxplot(data=full_data, y="sub_region", x="Ladder score", palette='Greens_r', order=order)
 
 # Display the figure in Streamlit
-st.pyplot()
+st.pyplot(fig)
 
 interpret4 = '''INTERPRETATION
 * Counties in northern europe are the happiest of all
@@ -269,23 +269,22 @@ fig = px.sunburst(data_frame=full_data,
 st.plotly_chart(fig)
 
 
-
 # Creating a correlation matrix
-corrmat = full_data.corr()
+corrmat = full_data.corr(numeric_only = True)
 
 # Streamlit App
 st.title("Correlation Heatmap")
 
 # Plotting the heatmap using Seaborn
-plt.figure(figsize=(10, 8))
-plt.title("Correlation heatmap", fontsize=20)
+fig, ax = plt.subplots(figsize=(10, 8))
+ax.set_title("Correlation heatmap", fontsize=20)
 
-sns.heatmap(corrmat, annot=True, cmap="PiYG", fmt=".2f", linewidths=0.5)
+sns.heatmap(corrmat, annot=True, cmap="PiYG", fmt=".2f", linewidths=0.5, ax=ax)
 
 # Display the heatmap in Streamlit
-st.pyplot()
+st.pyplot(fig)
 
-interpret4 = '''In the correlation heatmap, positive correlations can be observed between:
+interpret5 = '''In the correlation heatmap, positive correlations can be observed between:
 * Logged GDP per capita and the Ladder Score
 * Social support and the Ladder Score
 * Healthy life expectancy and the Ladder Score
@@ -299,7 +298,7 @@ This implies that as the Logged GDP per capita increases, as well as social supp
 
 On the other hand, lower levels of generosity and higher levels of perceptions of corruption are associated with a lower Ladder Score, decreasing appiness.
 '''
-st.write(interpret4)
+st.write(interpret5)
 
 conclusion = '''
 ---------------
