@@ -65,13 +65,18 @@ country_mapping.info()
 WHR.drop(WHR.loc[:, 'Standard error of ladder score':'lowerwhisker'].columns, inplace=True, axis=1)
 WHR.drop(WHR.loc[:, 'Ladder score in Dystopia':'Dystopia + residual'].columns, inplace=True, axis=1)
 
+# Replace the ' 's with Nan
+WHR = WHR.replace(" ", np.NaN)
+
+# Impute the missing values with mean imputation
+WHR = WHR.fillna(WHR["Healthy life expectancy"].mean())
+
+
 country_mapping = country_mapping.drop(country_mapping.columns[[1,3,4,7,8,9,10]], axis = 1)
 
 country_mapping = country_mapping.rename({'name':'Country name',
 											'alpha-3':'iso_alpha',
 											'sub-region':'sub_region'}, axis =1)
-
-	
 full_data = WHR.merge(country_mapping, on='Country name', how='left')
 	
 
@@ -268,7 +273,7 @@ fig = px.sunburst(data_frame=full_data,
 
 st.plotly_chart(fig)
 
-
+print(full_data.isnull().sum())
 
 # Creating a correlation matrix
 corrmat = full_data.corr()
